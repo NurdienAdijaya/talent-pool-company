@@ -1,0 +1,11 @@
+.footer_component {
+  background-color: #67595e;
+
+  background-image: linear-gradient(0deg, #67595e, white);
+  color: white;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

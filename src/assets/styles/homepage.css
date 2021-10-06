@@ -1,0 +1,9 @@
+.homepage {
+  padding: 30px;
+}
+
+@media only screen and (max-width: 350px) {
+  .homepage {
+    padding: 30px 10px;
+  }
+}
