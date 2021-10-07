@@ -4,9 +4,10 @@ import { put, takeEvery } from "redux-saga/effects";
 import * as types from "../../constants/types";
 
 function* getList(actions) {
-  const { error, section } = actions;
+  const { error, section, page } = actions;
+  const pages = `page=${page}`;
   try {
-    const res = yield axios.get(`${BASE_URL}/${section}`);
+    const res = yield axios.get(`${BASE_URL}/${section}?${pages}`);
     yield put({
       type: types.GET_LIST_SUCCESS,
       payload: res.data,

@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
-// import games from "./games";
-// import genres from "./genres";
-// import platform from "./platform";
 import list from "./list";
+import post from "./post";
+import deleteList from "./delete";
 
 export default combineReducers({
-  //   games,
-  //   genres,
-  //   platform,
   list,
+  post,
+  deleteList,
 });
