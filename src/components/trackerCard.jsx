@@ -12,7 +12,7 @@ const TrackerCard = (lists) => {
               <h6 className="bold">status :</h6>
               <div>
                 <DropdownButton
-                  as={ButtonGroup}  
+                  as={ButtonGroup}
                   key="down"
                   id={`dropdown-button-drop-down`}
                   drop="down"
@@ -29,15 +29,15 @@ const TrackerCard = (lists) => {
               </div>
             </div>
             <div className="card_detail">
-              <div className="d-flex justify-content-between">
+              <div className="detail">
                 <p className="bold">Talent Name :</p>
                 <p>{item.talent.name}</p>
               </div>
-              <div className="d-flex justify-content-between">
+              <div className="detail">
                 <p className="bold">Company Name :</p>
                 <p>{item.company.name}</p>
               </div>
-              <div className="d-flex justify-content-between">
+              <div className="detail">
                 <p className="bold">PIC Name :</p>
                 <p>{item.pic.name}</p>
               </div>
