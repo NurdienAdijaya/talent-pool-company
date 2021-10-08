@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { editStatus } from "../store/action/edit";
 import { postList } from "../store/action/post";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import { getStatus } from "../store/action/config";
+import { getCompany } from "../store/action/company";
+import { getPic } from "../store/action/pic";
+import { getTalent } from "../store/action/talent";
 
 const TrackerModal = ({ onClick, show, trackerId }) => {
   const dispatch = useDispatch();
@@ -15,24 +18,38 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
     status: "select status",
   });
   const [form, setForm] = useState({
-    id: "select status",
+    talent: "",
+    pic: "",
+    company: "",
   });
   const { configs } = useSelector((state) => state?.config?.configList);
+  const { companies } = useSelector((state) => state?.company?.companyList);
+  const { pics } = useSelector((state) => state?.pic?.picList);
+  const { talents } = useSelector((state) => state?.talent?.talentList);
+  // console.log("companies", companies);
+  // console.log("pics", pics);
+  // console.log("talents", talents);
+  console.log("form", form);
 
   useEffect(() => {
     dispatch(getStatus());
   }, [dispatch]);
-
-  const changeForm = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  useEffect(() => {
+    dispatch(getCompany());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(getPic());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(getTalent());
+  }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (form.name === "" || form.email === "") {
+    if (form.talent === "" || form.company === "" || form.pic === "") {
       alert("Please fill all form");
     } else {
-      dispatch(postList(trackerId, form));
+      dispatch(postList("trackers", form));
     }
   };
 
@@ -53,33 +70,99 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className="card_dropdown">
-            <DropdownButton
-              as={ButtonGroup}
-              key="down"
-              id={`dropdown-button-drop-down`}
-              drop="down"
-              variant="dark"
-              size="sm"
-              title={formEdit.status}
-            >
-              {configs?.map((item, index) => {
-                return (
-                  <Dropdown.Item
-                    eventKey={index}
-                    id="status"
-                    name="status"
-                    value={item}
-                    onClick={(e) =>
-                      setFormEdit({ ...formEdit, [e.target.name]: item })
-                    }
-                  >
-                    {item}
-                  </Dropdown.Item>
-                );
-              })}
-            </DropdownButton>
-          </div>
+          {trackerId ? (
+            <div className="card_dropdown">
+              <DropdownButton
+                as={ButtonGroup}
+                key="down"
+                id={`dropdown-button-drop-down`}
+                drop="down"
+                variant="dark"
+                size="sm"
+                title={formEdit.status}
+              >
+                {configs?.map((item, index) => {
+                  return (
+                    <Dropdown.Item
+                      eventKey={index}
+                      id="status"
+                      name="status"
+                      value={item}
+                      onClick={(e) =>
+                        setFormEdit({ ...formEdit, [e.target.name]: item })
+                      }
+                    >
+                      {item}
+                    </Dropdown.Item>
+                  );
+                })}
+              </DropdownButton>
+            </div>
+          ) : (
+            <div>
+              <div className="new_dropdown">
+                <h6>Talent: </h6>
+                <Form.Select
+                  aria-label="Default select example"
+                  id="talent"
+                  name="talent"
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                >
+                  <option>Open this select menu</option>
+                  {talents?.data?.map((item, index) => {
+                    return (
+                      <option id="talent" name="talent" value={item.id}>
+                        {item.name}
+                      </option>
+                    );
+                  })}
+                </Form.Select>
+              </div>
+              <div className="new_dropdown">
+                <h6>Company: </h6>
+                <Form.Select
+                  aria-label="Default select example"
+                  id="company"
+                  name="company"
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                >
+                  <option>Open this select menu</option>
+                  {companies?.data?.map((item, index) => {
+                    return (
+                      <option id="company" name="company" value={item.id}>
+                        {item.name}
+                      </option>
+                    );
+                  })}
+                </Form.Select>
+              </div>
+              <div className="new_dropdown">
+                <h6>PIC: </h6>
+                <Form.Select
+                  aria-label="Default select example"
+                  id="pic"
+                  name="pic"
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                >
+                  <option>Open this select menu</option>
+                  {pics?.data?.map((item, index) => {
+                    return (
+                      <option id="pic" name="pic" value={item.id}>
+                        {item.name}
+                      </option>
+                    );
+                  })}
+                </Form.Select>
+              </div>
+            </div>
+          )}
+
           {/* <form className="body_container" onSubmit={(e) => handleSubmit(e)}>
             <div className="input_container">
               <h6 className="input_title">{section} name :</h6>

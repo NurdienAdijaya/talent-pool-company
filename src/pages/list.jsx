@@ -6,6 +6,7 @@ import Card from "../components/card";
 import Loading from "../components/loading";
 import ModalComponent from "../components/modal";
 import TrackerCard from "../components/trackerCard";
+import TrackerModal from "../components/trackerModal";
 import { getList } from "../store/action/list";
 
 const List = () => {
@@ -27,6 +28,10 @@ const List = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showTracker, setShowTracker] = useState(false);
+  const handleCloseTracker = () => setShowTracker(false);
+  const handleShowTracker = () => setShowTracker(true);
+
   useEffect(() => {
     dispatch(getList(section, page));
   }, [dispatch, section, page]);
@@ -39,9 +44,15 @@ const List = () => {
         <>
           <div className="title_add_modal">
             <h1>{`List ${section}`}</h1>
-            <Button variant="primary" onClick={handleShow}>
-              Add new
-            </Button>
+            {section === "trackers" ? (
+              <Button variant="primary" onClick={handleShowTracker}>
+                Add new
+              </Button>
+            ) : (
+              <Button variant="primary" onClick={handleShow}>
+                Add new
+              </Button>
+            )}
           </div>
           {section === "trackers" ? (
             <>
@@ -64,6 +75,11 @@ const List = () => {
         </div>
       ) : null}
       <ModalComponent sec={section} show={show} onClick={handleClose} />
+      <TrackerModal
+        sec={section}
+        show={showTracker}
+        onClick={handleCloseTracker}
+      />
     </div>
   );
 };

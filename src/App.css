@@ -104,4 +104,12 @@ a:hover {
 .card_dropdown {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.new_dropdown {
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  justify-content: space-between;
+  margin: 10px 0;
 }
