@@ -93,3 +93,15 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+.card_button_container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.card_button {
+  margin: 0 5px;
+}
+.card_dropdown {
+  display: flex;
+  justify-content: center;
+}

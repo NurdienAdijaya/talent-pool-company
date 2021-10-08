@@ -14,7 +14,8 @@ const List = () => {
   const { lists, listLoading } = useSelector(
     (state) => state?.list?.entityList
   );
-  const limit = 15;
+
+  const limit = 16;
   const totalPage =
     lists?.count / limit === 1 ? 1 : Math.floor(lists?.count / limit + 1);
   const [page, setPage] = useState(1);

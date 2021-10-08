@@ -7,11 +7,19 @@ const Card = (lists) => {
   const [detailShow, setDetailShow] = useState(false);
   const [id, setId] = useState();
   const [name, setName] = useState();
+  const [email, setEmail] = useState();
 
   const handleClose = () => setDetailShow(false);
-  const handleShow = (id, name) => {
+  const handleDeleteShow = (id, name) => {
     setId(id);
     setName(name);
+    setDetailShow(true);
+  };
+  const handleEditShow = (id, name, email) => {
+    setId(id);
+    setName(name);
+    setEmail(email);
+
     setDetailShow(true);
   };
 
@@ -28,19 +36,30 @@ const Card = (lists) => {
               <p className="bold">Email :</p>
               <p>{item.email}</p>
             </div>
-
-            <Button
-              size="sm"
-              variant="primary"
-              onClick={() => handleShow(item.id, item.name)}
-            >
-              Danger
-            </Button>
+            <div className="card_button_container">
+              <Button
+                className="card_button"
+                size="sm"
+                variant="outline-info"
+                onClick={() => handleEditShow(item.id, item.name, item.email)}
+              >
+                Edit
+              </Button>
+              <Button
+                className="card_button"
+                size="sm"
+                variant="outline-danger"
+                onClick={() => handleDeleteShow(item.id, item.name)}
+              >
+                Delete
+              </Button>
+            </div>
           </div>
         );
       })}
       <ModalComponent
-        name={name}
+        oldName={name}
+        oldEmail={email}
         id={id}
         show={detailShow}
         onClick={handleClose}

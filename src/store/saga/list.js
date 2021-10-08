@@ -7,7 +7,7 @@ function* getList(actions) {
   const { error, section, page } = actions;
   const pages = `page=${page}`;
   try {
-    const res = yield axios.get(`${BASE_URL}/${section}?${pages}`);
+    const res = yield axios.get(`${BASE_URL}/${section}?${pages}&limit=16`);
     yield put({
       type: types.GET_LIST_SUCCESS,
       payload: res.data,

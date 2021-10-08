@@ -1,8 +1,19 @@
-import React from "react";
-import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
+import React, { useState } from "react";
 import "../assets/styles/trackerCard.css";
+import { Button } from "react-bootstrap";
+import TrackerModal from "./trackerModal";
 
 const TrackerCard = (lists) => {
+  const [detailShow, setDetailShow] = useState(false);
+  const [id, setId] = useState();
+
+  const handleClose = () => setDetailShow(false);
+  const handleEditShow = (id) => {
+    setId(id);
+
+    setDetailShow(true);
+  };
+
   return (
     <div className="card_component">
       {lists?.lists?.data?.map((item, index) => {
@@ -11,21 +22,9 @@ const TrackerCard = (lists) => {
             <div className="d-flex justify-content-between align-items-center mb-2">
               <h6 className="bold">status :</h6>
               <div>
-                <DropdownButton
-                  as={ButtonGroup}
-                  key="down"
-                  id={`dropdown-button-drop-down`}
-                  drop="down"
-                  variant="secondary"
-                  size="sm"
-                  title={item.status}
-                >
-                  <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-                  <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-                  <Dropdown.Item eventKey="3">
-                    Something else here
-                  </Dropdown.Item>
-                </DropdownButton>
+                <div classname="tracker_status">
+                  <h6>{item.status}</h6>
+                </div>
               </div>
             </div>
             <div className="card_detail">
@@ -42,9 +41,20 @@ const TrackerCard = (lists) => {
                 <p>{item.pic.name}</p>
               </div>
             </div>
+            <div className="card_button_container">
+              <Button
+                className="card_button"
+                size="sm"
+                variant="outline-info"
+                onClick={() => handleEditShow(item.id)}
+              >
+                Edit
+              </Button>
+            </div>
           </div>
         );
       })}
+      <TrackerModal show={detailShow} onClick={handleClose} trackerId={id} />
     </div>
   );
 };
