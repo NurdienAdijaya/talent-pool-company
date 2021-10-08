@@ -23,7 +23,7 @@ const TrackerCard = (lists) => {
               <h6 className="bold">status :</h6>
               <div>
                 <div classname="tracker_status">
-                  <h6>{item.status}</h6>
+                  <h6 className="bold">{item.status}</h6>
                 </div>
               </div>
             </div>

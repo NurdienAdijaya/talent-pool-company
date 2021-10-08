@@ -26,10 +26,6 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
   const { companies } = useSelector((state) => state?.company?.companyList);
   const { pics } = useSelector((state) => state?.pic?.picList);
   const { talents } = useSelector((state) => state?.talent?.talentList);
-  // console.log("companies", companies);
-  // console.log("pics", pics);
-  // console.log("talents", talents);
-  console.log("form", form);
 
   useEffect(() => {
     dispatch(getStatus());
@@ -113,7 +109,12 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                   <option>Open this select menu</option>
                   {talents?.data?.map((item, index) => {
                     return (
-                      <option id="talent" name="talent" value={item.id}>
+                      <option
+                        key={index}
+                        id="talent"
+                        name="talent"
+                        value={item.id}
+                      >
                         {item.name}
                       </option>
                     );
@@ -133,7 +134,12 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                   <option>Open this select menu</option>
                   {companies?.data?.map((item, index) => {
                     return (
-                      <option id="company" name="company" value={item.id}>
+                      <option
+                        key={index}
+                        id="company"
+                        name="company"
+                        value={item.id}
+                      >
                         {item.name}
                       </option>
                     );
@@ -153,7 +159,7 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                   <option>Open this select menu</option>
                   {pics?.data?.map((item, index) => {
                     return (
-                      <option id="pic" name="pic" value={item.id}>
+                      <option key={index} id="pic" name="pic" value={item.id}>
                         {item.name}
                       </option>
                     );

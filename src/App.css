@@ -54,11 +54,11 @@ a:hover {
 }
 
 .card_container {
-  box-shadow: 0 3px 10px rgb(148, 148, 148);
-  border-radius: 10px;
-  padding: 10px;
-  width: 280px;
-  margin: 10px 15px;
+  box-shadow: 0 0.1875rem 0.625rem rgb(148, 148, 148);
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  width: 17.5rem;
+  margin: 0.625rem 0.9375rem;
 }
 .spinner-container {
   display: flex;
@@ -66,20 +66,20 @@ a:hover {
   justify-content: center;
 }
 .spinner {
-  margin: 20px;
+  margin: 1.25rem;
 }
 .title_add_modal {
-  margin: 10px 20px;
+  margin: 0.625rem 1.25rem;
   display: flex;
   justify-content: space-between;
 }
 .input_title {
   text-transform: capitalize;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 .input {
-  width: 270px;
-  border-radius: 5px;
+  width: 16.875rem;
+  border-radius: 0.3125rem;
 }
 .body_container {
   display: flex;
@@ -87,7 +87,7 @@ a:hover {
   align-items: center;
 }
 .input_container {
-  margin: 5px;
+  margin: 0.3125rem;
 }
 .pagination {
   display: flex;
@@ -96,10 +96,10 @@ a:hover {
 .card_button_container {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 .card_button {
-  margin: 0 5px;
+  margin: 0 0.3125rem;
 }
 .card_dropdown {
   display: flex;
@@ -111,5 +111,5 @@ a:hover {
   align-items: center;
   white-space: pre-wrap;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 0.625rem 0;
 }
