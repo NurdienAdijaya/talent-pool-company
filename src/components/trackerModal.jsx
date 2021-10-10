@@ -97,8 +97,9 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
           ) : (
             <div>
               <div className="new_dropdown">
-                <h6>Talent: </h6>
+                <h6>Talent : </h6>
                 <Form.Select
+                  className="form_select_dropdown"
                   aria-label="Default select example"
                   id="talent"
                   name="talent"
@@ -106,7 +107,7 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                     setForm({ ...form, [e.target.name]: e.target.value })
                   }
                 >
-                  <option>Open this select menu</option>
+                  <option>Choose Talent</option>
                   {talents?.data?.map((item, index) => {
                     return (
                       <option
@@ -122,8 +123,9 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                 </Form.Select>
               </div>
               <div className="new_dropdown">
-                <h6>Company: </h6>
+                <h6>Company : </h6>
                 <Form.Select
+                  className="form_select_dropdown"
                   aria-label="Default select example"
                   id="company"
                   name="company"
@@ -131,7 +133,7 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                     setForm({ ...form, [e.target.name]: e.target.value })
                   }
                 >
-                  <option>Open this select menu</option>
+                  <option>Choose Company</option>
                   {companies?.data?.map((item, index) => {
                     return (
                       <option
@@ -147,8 +149,9 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                 </Form.Select>
               </div>
               <div className="new_dropdown">
-                <h6>PIC: </h6>
+                <h6>PIC : </h6>
                 <Form.Select
+                  className="form_select_dropdown"
                   aria-label="Default select example"
                   id="pic"
                   name="pic"
@@ -156,7 +159,7 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
                     setForm({ ...form, [e.target.name]: e.target.value })
                   }
                 >
-                  <option>Open this select menu</option>
+                  <option>Choose PIC</option>
                   {pics?.data?.map((item, index) => {
                     return (
                       <option key={index} id="pic" name="pic" value={item.id}>
@@ -201,11 +204,11 @@ const TrackerModal = ({ onClick, show, trackerId }) => {
             Close
           </Button>
           {trackerId ? (
-            <Button variant="primary" onClick={handleEdit}>
+            <Button className="btn_primary" onClick={handleEdit}>
               Edit Status
             </Button>
           ) : (
-            <Button variant="primary" onClick={handleSubmit}>
+            <Button className="btn_primary" onClick={handleSubmit}>
               Submit
             </Button>
           )}

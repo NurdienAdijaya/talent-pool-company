@@ -42,8 +42,10 @@ const ModalComponent = ({ onClick, show, oldName = "", id, oldEmail = "" }) => {
     <div>
       <Modal show={show} onHide={onClick}>
         <Modal.Header closeButton>
-          {id ? (
-            <Modal.Title>Delete {form.name}?</Modal.Title>
+          {oldEmail ? (
+            <Modal.Title>Edit {oldName}?</Modal.Title>
+          ) : id ? (
+            <Modal.Title>Delete {oldName}?</Modal.Title>
           ) : (
             <Modal.Title>Add new {section}</Modal.Title>
           )}
@@ -120,7 +122,7 @@ const ModalComponent = ({ onClick, show, oldName = "", id, oldEmail = "" }) => {
             Close
           </Button>
           {oldEmail ? (
-            <Button variant="primary" onClick={handleEdit}>
+            <Button className="btn_primary" onClick={handleEdit}>
               Submit
             </Button>
           ) : id ? (
@@ -128,7 +130,7 @@ const ModalComponent = ({ onClick, show, oldName = "", id, oldEmail = "" }) => {
               Delete
             </Button>
           ) : (
-            <Button variant="primary" onClick={handleSubmit}>
+            <Button className="btn_primary" onClick={handleSubmit}>
               Submit
             </Button>
           )}

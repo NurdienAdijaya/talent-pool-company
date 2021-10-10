@@ -1,12 +1,44 @@
-# Getting Started with Create React App
+# Welcome to NURD x RAWG Project.
+
+You can see live app at https://talent-pool-company.netlify.app/
+
+This project was created in order to fulfill the Group-A task of Glints Academy.
+
+What is implemented in this project?
+
+- Responsive for tablet or tablet devices
+- This application was created with the aim of making it easier for outsourcing companies in the job matching process
+- User can see, add, update or delete Talent / job candidate
+- User can see, add, update or delete new PIC
+- User can see, add, update or delete new Company
+- User can create new Trackers / Job matching
+- User can see and edit status of job matching
+- PWA (Progressive Web Apps) so user can download this app in chrome for desktop and android
+
+If you want to ask more about this project, feel free to reach me at:
+
+<p align="center">
+<a href="https://linkedin.com/in/nurdienadijaya" target="_blank"><img src="https://img.shields.io/badge/-nurdien%20adijaya-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nurdienadijaya@gmail.com"><img src="https://img.shields.io/badge/-nurdienadijaya@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
+<a href="https://instagram.com/nurdienadijaya"><img src="https://img.shields.io/badge/-@nurdienadijaya-E4405F?style=flat&logo=Instagram&logoColor=white"/></a>
+<a href="https://facebook.com/nurdienadijaya"><img src="https://img.shields.io/badge/-@nurdienadijaya-1877F2?style=flat&logo=Facebook&logoColor=white"/></a>
+</p>
+
+theres some documentation:
+
+# Getting Started with NURD x RAWG
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installing NURD x RAWG
+
+Before you run the app, you need to install it with `yarn install` or `npm install`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +46,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `yarn test` or `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `yarn build` or `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +61,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn eject` or `npm eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -65,6 +97,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+### `yarn build` or `npm build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

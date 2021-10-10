@@ -19,8 +19,8 @@ const List = () => {
   const limit = 16;
   const totalPage =
     lists?.count / limit === 1 ? 1 : Math.floor(lists?.count / limit + 1);
-  const [page, setPage] = useState(1);
 
+  const [page, setPage] = useState(1);
   const previousPage = () => setPage(page - 1);
   const nextPage = () => setPage(page + 1);
 
@@ -45,11 +45,11 @@ const List = () => {
           <div className="title_add_modal">
             <h1>{`List ${section}`}</h1>
             {section === "trackers" ? (
-              <Button variant="primary" onClick={handleShowTracker}>
+              <Button className="btn_primary" onClick={handleShowTracker}>
                 Add new
               </Button>
             ) : (
-              <Button variant="primary" onClick={handleShow}>
+              <Button className="btn_primary" onClick={handleShow}>
                 Add new
               </Button>
             )}
@@ -66,7 +66,7 @@ const List = () => {
         </>
       )}
       {listLoading ? null : totalPage > 1 ? (
-        <div classname="pagination">
+        <div className="pagination">
           <Pagination>
             {page > 1 ? <Pagination.Prev onClick={previousPage} /> : null}
             <Pagination.Item active>{page}</Pagination.Item>

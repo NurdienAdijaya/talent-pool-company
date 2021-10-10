@@ -22,8 +22,27 @@ const TrackerCard = (lists) => {
             <div className="d-flex justify-content-between align-items-center mb-2">
               <h6 className="bold">status :</h6>
               <div>
-                <div classname="tracker_status">
-                  <h6 className="bold">{item.status}</h6>
+                <div className="tracker_status">
+                  <p
+                    className="bold tracker_status_text"
+                    style={{
+                      color:
+                        item.status === "review"
+                          ? "#C2B280"
+                          : item.status === "hr interview"
+                          ? "#FFFF00"
+                          : item.status === "user interview"
+                          ? "#FFFF00"
+                          : item.status === "offer"
+                          ? "#BFFF00"
+                          : item.status === "rejected"
+                          ? "red"
+                          : "#66FF00",
+                    }}
+                    onClick={() => handleEditShow(item.id)}
+                  >
+                    {item.status}
+                  </p>
                 </div>
               </div>
             </div>

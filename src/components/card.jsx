@@ -9,7 +9,12 @@ const Card = (lists) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
-  const handleClose = () => setDetailShow(false);
+  const handleClose = () => {
+    setId("");
+    setName("");
+    setEmail("");
+    setDetailShow(false);
+  };
   const handleDeleteShow = (id, name) => {
     setId(id);
     setName(name);

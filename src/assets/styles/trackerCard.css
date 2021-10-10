@@ -1,3 +1,12 @@
 .trackerCard_detail {
   margin-top: 0.625rem;
 }
+.tracker_status {
+  background-color: black;
+}
+.tracker_status_text {
+  text-transform: uppercase;
+  background-color: #464646;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -113,3 +113,11 @@ a:hover {
   justify-content: space-between;
   margin: 0.625rem 0;
 }
+.btn_primary {
+  color: #fff;
+  background-color: #685058 !important;
+  border-color: #685058 !important;
+}
+.form_select_dropdown {
+  width: 70% !important;
+}

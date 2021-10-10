@@ -1,5 +1,6 @@
 .homepage {
   padding: 1.875rem;
+  height: 75vh;
 }
 
 @media only screen and (max-width: 21.875rem) {
