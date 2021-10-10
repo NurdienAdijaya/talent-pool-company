@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Talent Pool Company",
+  "name": "Talent Pool Company",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "Nurd-icon.jpeg",
+      "src": "logo192.png",
       "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "Nurd-icon.jpeg",
+      "src": "logo512.png",
       "type": "image/jpeg",
       "sizes": "512x512"
     }
